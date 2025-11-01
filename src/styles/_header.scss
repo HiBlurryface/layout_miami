@@ -159,7 +159,7 @@
       color: $main-black;
       position: relative;
 
-      &:after {
+      &::after {
         @extend %transition;
 
         content: ' ';
@@ -171,10 +171,8 @@
         background: $main-black;
       }
 
-      &:hover {
-        &:after {
-          width: 100%;
-        }
+      &:hover::after {
+        width: 100%;
       }
     }
 
@@ -201,7 +199,7 @@
       position: relative;
       padding-bottom: 8px;
 
-      &:after {
+      &::after {
         content: ' ';
         position: absolute;
         bottom: 0;
