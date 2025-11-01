@@ -19,7 +19,7 @@
     @extend %transition;
 
     z-index: 9999;
-    background: url('./../images/logo-white.svg');
+    background: url("./../images/logo-white.svg");
     background-size: cover !important;
     width: 187px;
     height: 56px;
@@ -119,7 +119,7 @@
   &__menu {
     @extend %transition;
 
-    overflow-y: auto;
+    overflow-y: scroll;
     z-index: 999;
     position: absolute;
     top: 0;
@@ -162,7 +162,7 @@
       &::after {
         @extend %transition;
 
-        content: ' ';
+        content: " ";
         position: absolute;
         bottom: 0;
         left: 0;
@@ -200,7 +200,7 @@
       padding-bottom: 8px;
 
       &::after {
-        content: ' ';
+        content: " ";
         position: absolute;
         bottom: 0;
         left: 0;
@@ -213,7 +213,7 @@
 
   &.active {
     & .header__logo {
-      background: url('./../images/logo-black.svg');
+      background: url("./../images/logo-black.svg");
     }
 
     & .header__burger {
