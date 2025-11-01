@@ -1,4 +1,37 @@
 %h1 {
-  font-family: Roboto, sans-serif;
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+%h2 {
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 100%;
+}
+
+%h3 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+%par {
+  font-size: 16px;
   font-weight: 400;
+  line-height: 140%;
+}
+
+%button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $main-white;
+  border-radius: 40px;
+  height: 56px;
+
+  font-size: 16px;
+  line-height: 27px;
+  font-weight: 700;
+  color: $main-black;
 }

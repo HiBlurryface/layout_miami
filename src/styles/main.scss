@@ -1,7 +1,6 @@
-@import 'utils';
-@import 'fonts';
-@import 'typography';
+@import "utils";
+@import "fonts";
 
 body {
-  background: $c-gray;
+  font-family: Poppins, sans-serif;
 }
