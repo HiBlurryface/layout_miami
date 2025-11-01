@@ -1,6 +1,24 @@
-@import "utils";
-@import "fonts";
+@import 'reset';
+@import 'utils';
+@import 'fonts';
+@import 'header';
+
+::-webkit-scrollbar {
+  width: 4px;
+  background-color: $main-black;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $main-white;
+  border-radius: 5px;
+}
 
 body {
   font-family: Poppins, sans-serif;
+  background: $main-black;
+  user-select: none;
+  &.locked {
+    overflow: hidden;
+  }
 }
