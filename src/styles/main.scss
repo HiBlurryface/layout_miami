@@ -22,3 +22,26 @@ body {
     overflow: hidden;
   }
 }
+
+.preview {
+  background: url('./../images/photos/preview.jpg') center no-repeat;
+  background-size: cover;
+  height: 710px;
+
+  @media (max-width: 768px) {
+    height: 628px;
+  }
+
+  @media (max-width: 425px) {
+    background-position: right;
+    height: 480px;
+  }
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  &__title {
+    @extend %h1;
+  }
+}
