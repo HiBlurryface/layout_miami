@@ -23,6 +23,20 @@ body {
   }
 }
 
+section {
+  padding: 120px 0 0;
+
+  @media (max-width: 768px) {
+    padding: 60px 0 0;
+  }
+}
+
+.container {
+  @extend %container;
+}
+
+// preview styles
+
 .preview {
   background: url('./../images/photos/preview.jpg') center no-repeat;
   background-size: cover;
@@ -43,5 +57,34 @@ body {
   }
   &__title {
     @extend %h1;
+  }
+}
+
+// about section styles
+
+.about {
+  &__container {
+    display: flex;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+  &__title {
+    @extend %h2;
+
+    flex: 0 0 auto;
+  }
+  &__subtitle {
+    font-weight: 500;
+    font-size: 23px;
+    line-height: 140%;
+    color: $main-white;
+    max-width: 500px;
+    margin: 0 0 0 120px;
+
+    @media (max-width: 768px) {
+      margin: 32px 0 0;
+    }
   }
 }

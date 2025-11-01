@@ -1,8 +1,13 @@
-.container {
-  max-width: 1060px;
+%container {
+  max-width: 1020px;
+  padding: 0 74px;
+  box-sizing: content-box;
   margin: 0 auto;
-  padding: 0 20px;
   height: 100%;
+
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
 }
 
 %transition {
@@ -33,6 +38,14 @@
   font-weight: 500;
   line-height: 100%;
   color: $main-white;
+
+  @media (max-width: 768px) {
+    font-size: 48px;
+  }
+
+  @media (max-width: 425px) {
+    font-size: 32px;
+  }
 }
 
 %h3 {

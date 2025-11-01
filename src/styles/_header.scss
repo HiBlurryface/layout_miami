@@ -19,7 +19,7 @@
     @extend %transition;
 
     z-index: 9999;
-    background: url("./../images/logo-white.svg");
+    background: url('./../images/logo-white.svg');
     background-size: cover !important;
     width: 187px;
     height: 56px;
@@ -136,17 +136,17 @@
       background: $main-black;
     }
 
-    &-container {
-      padding: 152px 20px 24px;
-
-      @media (max-width: 425px) {
-        padding: 110px 20px 24px;
-      }
-    }
-
     &-item {
       &:not(:last-child) {
         margin-bottom: 32px;
+      }
+    }
+
+    &-nav {
+      padding-top: 152px;
+
+      @media (max-width: 425px) {
+        padding-top: 110px;
       }
     }
 
@@ -162,7 +162,7 @@
       &::after {
         @extend %transition;
 
-        content: " ";
+        content: ' ';
         position: absolute;
         bottom: 0;
         left: 0;
@@ -200,7 +200,7 @@
       padding-bottom: 8px;
 
       &::after {
-        content: " ";
+        content: ' ';
         position: absolute;
         bottom: 0;
         left: 0;
@@ -213,7 +213,7 @@
 
   &.active {
     & .header__logo {
-      background: url("./../images/logo-black.svg");
+      background: url('./../images/logo-black.svg');
     }
 
     & .header__burger {
