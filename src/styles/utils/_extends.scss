@@ -75,3 +75,15 @@
   font-weight: 700;
   color: $main-black;
 }
+
+%about-paddings {
+  padding-bottom: 164px;
+
+  @media (max-width: 768px) {
+    padding-bottom: 132px;
+  }
+
+  @media (max-width: 425px) {
+    padding-bottom: 92px;
+  }
+}
