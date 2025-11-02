@@ -1,4 +1,6 @@
 .header {
+  @extend %transition;
+
   position: fixed;
   background: transparent;
   height: 128px;
@@ -212,6 +214,11 @@
   }
 
   &.active {
+    background: $main-black;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  &.opened {
     & .header__logo {
       background: url('./../images/logo-black.svg');
     }
