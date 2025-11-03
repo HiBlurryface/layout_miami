@@ -63,6 +63,8 @@
 }
 
 %button {
+  @extend %transition;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,6 +77,10 @@
   line-height: 27px;
   font-weight: 700;
   color: $main-black;
+
+  &:hover {
+    box-shadow: 1px 4px 16px 0 rgba(232, 232, 240, 0.4);
+  }
 }
 
 %about-paddings {
