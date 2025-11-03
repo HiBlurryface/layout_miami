@@ -214,3 +214,13 @@ body {
     margin: 0 auto;
   }
 }
+
+// footer styles
+
+.footer {
+  &__bg {
+    height: clamp(200px, 28vw, 555px);
+    object-fit: cover;
+    width: 100%;
+  }
+}
