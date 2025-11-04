@@ -1,7 +1,6 @@
 .form {
   &__group {
     position: relative;
-
     &:not(:first-child) {
       margin-top: 24px;
     }
@@ -16,6 +15,8 @@
     font-size: 14px;
     line-height: 20px;
     font-weight: 400;
+    visibility: visible;
+    opacity: 1;
 
     top: 13px;
     left: 16px;
@@ -61,12 +62,6 @@
     font-size: 14px;
     line-height: 20px;
     font-weight: 400;
-
-    &:focus ~ .form__label,
-    &:not(:placeholder-shown) ~ .form__label {
-      top: 0;
-      font-size: 10px;
-    }
   }
 
   &__textarea {
@@ -81,12 +76,6 @@
     font-size: 14px;
     line-height: 20px;
     font-weight: 400;
-
-    &:focus ~ .form__label,
-    &:not(:placeholder-shown) ~ .form__label {
-      top: 0;
-      font-size: 12px;
-    }
   }
 
   &__button {
@@ -100,8 +89,17 @@
       display: unset;
     }
 
-    & .field-validate {
+    & .form__validate {
       box-shadow: 0 0 10px 0 $main-error;
+    }
+  }
+
+  &__placeholder {
+    &:focus ~ .form__label,
+    &:not(:placeholder-shown) ~ .form__label {
+      left: 100%;
+      visibility: hidden;
+      opacity: 0;
     }
   }
 }
