@@ -55,6 +55,13 @@
   color: $main-white;
 }
 
+%h4 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 140%;
+  color: $main-white;
+}
+
 %par {
   font-size: 16px;
   font-weight: 400;
@@ -97,4 +104,8 @@
 
 %product-paddings {
   padding-bottom: 144px;
+}
+
+%details-paddings {
+  padding-bottom: 180px;
 }

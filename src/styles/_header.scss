@@ -1,6 +1,7 @@
 .header {
   @extend %transition;
 
+  z-index: 999999;
   position: fixed;
   background: transparent;
   height: 128px;

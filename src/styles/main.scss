@@ -2,6 +2,7 @@
 @import 'utils';
 @import 'fonts';
 @import 'header';
+@import 'form';
 
 ::-webkit-scrollbar {
   width: 4px;
@@ -157,6 +158,8 @@ body {
 // details styles
 
 .details {
+  @extend %details-paddings;
+
   &__title {
     @extend %h2;
 
@@ -212,6 +215,59 @@ body {
 
     max-width: 324px;
     margin: 0 auto;
+  }
+}
+
+// contact styles
+
+.contact {
+  &__title {
+    @extend %h2;
+
+    margin-bottom: 48px;
+    text-align: center;
+  }
+
+  &__content {
+    display: flex;
+    gap: 200px;
+
+    @media (max-width: 1024px) {
+      gap: 24px;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 550px) {
+      flex-direction: column;
+    }
+  }
+
+  &__form {
+    flex: 1 1;
+    max-width: 410px;
+    width: 100%;
+
+    @media (max-width: 550px) {
+      margin: 0 auto;
+    }
+  }
+
+  &__info {
+    &-group {
+      &:not(:last-child) {
+        padding-bottom: 24px;
+      }
+    }
+    &-title {
+      @extend %h4;
+
+      padding-bottom: 8px;
+    }
+    &-text {
+      @extend %par;
+
+      font-weight: 500;
+    }
   }
 }
 

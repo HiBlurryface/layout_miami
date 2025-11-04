@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MyBike</title>
     <link rel="stylesheet" href="src/styles/main.scss" />
-
-    <script src="src/scripts/main.js" defer></script>
   </head>
   <body>
     <header class="header">
@@ -125,9 +123,60 @@
           <a href="#" class="details__btn">Explore</a>
         </div>
       </section>
+      <section class="contact">
+        <div class="contact__container container">
+          <h2 class="contact__title">Contact us</h2>
+          <div class="contact__content">
+            <form action="" class="contact__form form" id="contact-form">
+              <div class="form__group">
+                <input type="text" id="name" class="form__input field-validate" placeholder=" " value="">
+                <label for="name" class="form__label">Name</label>
+                <div class="form__error">
+                  <img src="src/images/error-icon.png" alt="" class="form__error-icon">
+                  <span class="form__error-info" id="name-error"></span>
+                </div>
+              </div>
+              <div class="form__group">
+                <input type="email" id="email" class="form__input field-validate" placeholder=" ">
+                <label for="email" class="form__label">Email</label>
+                <div class="form__error">
+                  <img src="src/images/error-icon.png" alt="" class="form__error-icon">
+                  <span class="form__error-info" id="email-error"></span>
+                </div>
+              </div>
+              <div class="form__group">
+                <textarea name="" id="message" cols="30" rows="10" class="form__textarea field-validate"
+                  placeholder=" "></textarea>
+                <label for="" class="form__label">Message</label>
+                <div class="form__error">
+                  <img src="src/images/error-icon.png" alt="" class="form__error-icon">
+                  <span class="form__error-info" id="message-error">Sdasd</span>
+                </div>
+              </div>
+              <button type="submit" class="form__button">Send</button>
+            </form>
+            <div class="contact__info">
+              <div class="contact__info-group">
+                <h4 class="contact__info-title">Phone</h4>
+                <p class="contact__info-text">+1 234 5555-55-55</p>
+              </div>
+              <div class="contact__info-group">
+                <h4 class="contact__info-title">Email</h4>
+                <p class="contact__info-text">hello@miami.com</p>
+              </div>
+              <div class="contact__info-group">
+                <h4 class="contact__info-title">Address</h4>
+                <p class="contact__info-text">400 first ave. <br> suite 700 <br> Minneapolis, MN 55401</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
     <footer class="footer">
       <img src="src/images/photos/footer.jpg" alt="" class="footer__bg">
     </footer>
+
+    <script src="src/scripts/main.js" defer></script>
   </body>
 </html>
