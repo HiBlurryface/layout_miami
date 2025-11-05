@@ -15,6 +15,10 @@
   border-radius: 5px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Poppins, sans-serif;
   background: $main-black;
@@ -45,6 +49,11 @@ body {
   background: #90ee90;
   padding: 12px 24px;
   border-radius: 24px;
+
+  &.error {
+    background: $main-red;
+    color: $main-white;
+  }
 
   &.active {
     top: 140px;
@@ -174,10 +183,18 @@ body {
     }
 
     &-price {
+      @extend %transition;
+
       font-weight: 700;
       font-size: 24px;
       line-height: 140%;
       color: $main-white;
+    }
+
+    &:hover {
+      & > .product__item-price {
+        color: $main-red;
+      }
     }
   }
 }

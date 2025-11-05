@@ -29,11 +29,16 @@
         <div class="header__menu-container container">
           <nav class="header__menu-nav">
             <ul class="header__menu-list">
-              <li class="header__menu-item"><a href="#" class="header__menu-link">Home</a></li>
-              <li class="header__menu-item"><a href="#" class="header__menu-link">About us</a></li>
-              <li class="header__menu-item"><a href="#" class="header__menu-link">Compare bikes</a></li>
-              <li class="header__menu-item"><a href="#" class="header__menu-link">Details</a></li>
-              <li class="header__menu-item"><a href="#" class="header__menu-link">Contacts</a></li>
+              <li class="header__menu-item"><a href="#" data-nav="home" class="header__menu-link">Home</a></li>
+              <li class="header__menu-item"><a href="#about" data-nav="about" class="header__menu-link">About us</a>
+              </li>
+              <li class="header__menu-item"><a href="#product" data-nav="product" class="header__menu-link">Compare
+                  bikes</a></li>
+              <li class="header__menu-item"><a href="#details" data-nav="details" class="header__menu-link">Details</a>
+              </li>
+              <li class="header__menu-item"><a href="#contact" data-nav="contacts"
+                  class="header__menu-link">Contacts</a>
+              </li>
             </ul>
           </nav>
           <a href="tel:+123455555555" class="header__menu-phone">+1 234 5555-55-55</a>
@@ -41,20 +46,20 @@
         </div>
       </div>
     </header>
-    <div class="preview">
+    <div class="preview" data-section="home">
       <div class="preview__container container">
         <h1 class="preview__title">Take the Streets</h1>
       </div>
     </div>
     <main class="main">
-      <section class="about">
+      <section class="about" data-section="about">
         <div class="about__container container">
           <h2 class="about__title">Move Free</h2>
           <p class="about__subtitle">Shift your ride, not gears. Find the fastest way to move in the city as the bike
             adapts intuitively to power the speed you need.</p>
         </div>
       </section>
-      <section class="product">
+      <section class="product" data-section="product">
         <div class="product__container container">
           <h2 class="product__title">Compare Bikes</h2>
           <div class="product__group">
@@ -82,7 +87,7 @@
           </div>
         </div>
       </section>
-      <section class="details">
+      <section class="details" data-section="details">
         <div class="details__container container">
           <h2 class="details__title">The Details</h2>
           <div class="details__content">
@@ -137,7 +142,7 @@
           <a href="#" class="details__btn">Explore</a>
         </div>
       </section>
-      <section class="contact">
+      <section class="contact" data-section="contacts">
         <div class="contact__container container">
           <h2 class="contact__title">Contact us</h2>
           <div class="contact__content">
@@ -195,7 +200,7 @@
     </footer>
 
     <div class="toast">
-      <h4 class="toast__text">Thank you for contacting us!</h4>
+      <h4 class="toast__text"></h4>
     </div>
 
     <script src="src/scripts/main.js" defer></script>
