@@ -3,14 +3,10 @@ let body = document.querySelector('body');
 let header = document.querySelector(".header");
 let headerButton = document.querySelector('.header__burger');
 
-// var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-// let form = document.querySelector('#contact-form');
-// let nameInput = document.querySelector('#name');
-// let emailInput = document.querySelector('#email');
-// let nameError = document.querySelector('#name-error')
-// let emailError = document.querySelector('#email-error')
-// let messageInput = document.querySelector('#message');
-// let messageError = document.querySelector('#message-error');
+var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+let form = document.querySelector('#contact-form');
+let inputs = document.querySelectorAll('.form__validate');
+let errors = document.querySelectorAll('.form__error-info');
 
 window.addEventListener('scroll', () => {
   window.scrollY > 1
@@ -23,46 +19,54 @@ headerButton.addEventListener('click', () => {
   body.classList.toggle('locked')
 })
 
-// form.addEventListener('submit', function (e) {
-//   e.preventDefault();
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
 
-//   console.log('seccues')
-// })
+  let isValid = true;
 
-// function addError(input) {
-//   input.parentElement.classList.add('error');
-// }
+  inputs.forEach((input) => {
+    let result = validate(input);
 
-// function removeError(input) {
-//   input.parentElement.classList.remove('error');
-// }
+    if (!result) {
+      isValid = false;
+    }
+  });
 
-// nameInput.addEventListener('input', function () {
-//   if (this.value.length === 0) {
-//     addError(this)
-//     nameError.textContent = 'Field can`t be empty!';
-//   } else {
-//     removeError(this)
-//   }
-// })
+  if (isValid) {
+    alert('success')
+  }
+})
 
-// emailInput.addEventListener('input', function () {
-//   if (this.value.length < 1) {
-//     addError(this)
-//     emailError.textContent = 'Field can`t be empty!'
-//   } else if (!regex.test(this.value) && this.value.length > 1) {
-//     addError(this)
-//     emailError.textContent = 'Wrong email addres!'
-//   } else {
-//     removeError(this)
-//   }
-// })
+inputs.forEach((input) => {
+  input.addEventListener('input', function () {
+    validate(input)
+  })
+});
 
-// messageInput.addEventListener('input', function () {
-//   if (this.value.length < 1) {
-//     addError(this);
-//     messageError.textContent = 'Field shoult least minimum 10 symbols!'
-//   } else {
-//     removeError(this);
-//   }
-// })
+function validate(input) {
+  const val = input.value.trim();
+
+  if (val === '') {
+    addError(input, 'Field can\'t be empty!')
+    return false;
+  }
+
+  if (input.id === 'email' && !regex.test(val)) {
+    addError(input, 'Wrong email address!')
+    return false;
+  }
+
+  removeError(input)
+  return true;
+}
+
+function addError(input, error) {
+  let currentError = Array.from(errors).find(el => el.id === `${input.id}-error`);
+  currentError.textContent = error;
+
+  input.parentElement.classList.add('error');
+}
+
+function removeError(input) {
+  input.parentElement.classList.remove('error');
+}

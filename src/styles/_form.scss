@@ -1,11 +1,4 @@
 .form {
-  &__group {
-    position: relative;
-    &:not(:first-child) {
-      margin-top: 24px;
-    }
-  }
-
   &__label {
     @extend %transition;
 
@@ -84,22 +77,29 @@
     margin-top: 32px;
   }
 
-  &.error {
-    & .form__error {
-      display: unset;
-    }
-
-    & .form__validate {
-      box-shadow: 0 0 10px 0 $main-error;
-    }
-  }
-
   &__placeholder {
     &:focus ~ .form__label,
     &:not(:placeholder-shown) ~ .form__label {
       left: 100%;
       visibility: hidden;
       opacity: 0;
+    }
+  }
+
+  &__group {
+    position: relative;
+    &:not(:first-child) {
+      margin-top: 24px;
+    }
+
+    &.error {
+      & .form__error {
+        display: unset;
+      }
+
+      & .form__validate {
+        box-shadow: 0 0 10px 0 $main-error;
+      }
     }
   }
 }
