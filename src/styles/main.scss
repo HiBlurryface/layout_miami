@@ -28,6 +28,33 @@ body {
   @extend %container;
 }
 
+.toast {
+  @extend %h4;
+  @extend %transition;
+
+  font-weight: 700;
+  width: max-content;
+  box-shadow: 0 0 16px 0 rgb(0, 0, 0);
+  color: $main-black;
+  z-index: 999;
+  position: fixed;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: #90ee90;
+  padding: 12px 24px;
+  border-radius: 24px;
+
+  &.active {
+    top: 140px;
+
+    @media (max-width: 425px) {
+      top: 100px;
+    }
+  }
+}
+
 // paddings for sections
 
 .main {

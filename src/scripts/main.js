@@ -7,6 +7,7 @@ var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 let form = document.querySelector('#contact-form');
 let inputs = document.querySelectorAll('.form__validate');
 let errors = document.querySelectorAll('.form__error-info');
+let toast = document.querySelector('.toast');
 
 window.addEventListener('scroll', () => {
   window.scrollY > 1
@@ -23,7 +24,6 @@ form.addEventListener('submit', function (e) {
   e.preventDefault();
 
   let isValid = true;
-
   inputs.forEach((input) => {
     let result = validate(input);
 
@@ -33,7 +33,22 @@ form.addEventListener('submit', function (e) {
   });
 
   if (isValid) {
-    alert('success')
+    let data = [];
+
+    inputs.forEach((input) => {
+      let inputData = {
+        [input.id]: input.value,
+      }
+      data.push(inputData);
+      input.value = "";
+    })
+
+    toast.classList.add('active')
+    setTimeout(() => {
+      toast.classList.remove('active');
+    }, 3000);
+
+    console.log(data)
   }
 })
 
