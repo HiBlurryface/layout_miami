@@ -25,7 +25,7 @@
       position: absolute;
       top: 0;
       left: 16px;
-      color: $main-error;
+      color: $main-red;
       font-size: 14px;
       line-height: 20px;
       font-weight: 400;
@@ -98,7 +98,7 @@
       }
 
       & .form__validate {
-        box-shadow: 0 0 10px 0 $main-error;
+        box-shadow: 0 0 10px 0 $main-red;
       }
     }
   }

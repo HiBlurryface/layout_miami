@@ -18,7 +18,6 @@
 body {
   font-family: Poppins, sans-serif;
   background: $main-black;
-  user-select: none;
   &.locked {
     overflow: hidden;
   }
@@ -292,6 +291,8 @@ body {
     }
     &-text {
       @extend %par;
+      @extend %transition;
+      @extend %hover-red;
 
       font-weight: 500;
     }

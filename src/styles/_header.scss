@@ -21,7 +21,7 @@
   &__logo {
     @extend %transition;
 
-    z-index: 999;
+    z-index: 999999;
     background: url('./../images/logo-white.svg');
     background-size: cover !important;
     width: 187px;
@@ -180,6 +180,9 @@
     }
 
     &-phone {
+      @extend %transition;
+      @extend %hover-red;
+
       display: block;
       width: fit-content;
       font-weight: 700;

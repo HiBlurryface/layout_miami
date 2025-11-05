@@ -14,6 +14,12 @@
   transition: 0.3s;
 }
 
+%hover-red {
+  &:hover {
+    color: $main-red;
+  }
+}
+
 %h1 {
   font-size: 80px;
   font-weight: 700;
