@@ -65,10 +65,11 @@ form.addEventListener('submit', function (e) {
 
     toast.textContent = 'Thank you for contacting us!';
     toast.classList.add('active')
-    toast.classList.remove('error')
+    form.classList.add('locked')
 
     setTimeout(() => {
       toast.classList.remove('active');
+      form.classList.remove('locked');
     }, 3000);
 
     console.log(data)

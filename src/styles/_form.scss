@@ -1,4 +1,9 @@
 .form {
+  &.locked {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
   &__label {
     @extend %transition;
 
