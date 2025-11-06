@@ -88,7 +88,7 @@ function showToast(message, isError) {
   }
 
   setTimeout(() => {
-    toast.classList.remove('active', 'error');
+    toast.classList.remove('active');
   }, 3000);
 }
 
