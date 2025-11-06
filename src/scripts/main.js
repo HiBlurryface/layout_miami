@@ -57,33 +57,40 @@ form.addEventListener('submit', function (e) {
 
   if (isValid) {
     let data = {};
-
     inputs.forEach((input) => {
       data[input.id] = input.value;
       input.value = "";
     })
 
-    toast.textContent = 'Thank you for contacting us!';
-    toast.classList.add('active')
-    form.classList.add('locked')
+    showToast('Thank you for contacting us!');
 
+    form.classList.add('locked')
     setTimeout(() => {
-      toast.classList.remove('active');
       form.classList.remove('locked');
     }, 3000);
 
     console.log(data)
   } else {
-    toast.textContent = 'Incorect form fields!'
-    toast.classList.add('active', 'error')
-
-    setTimeout(() => {
-      toast.classList.remove('active', 'error');
-    }, 3000);
+    showToast('Incorect form fields!', true);
 
     console.log('error')
   }
 })
+
+function showToast(message, isError) {
+  toast.textContent = message;
+  toast.classList.add('active')
+
+  if (isError) {
+    toast.classList.add('error')
+  } else {
+    toast.classList.remove('error')
+  }
+
+  setTimeout(() => {
+    toast.classList.remove('active', 'error');
+  }, 3000);
+}
 
 inputs.forEach((input) => {
   input.addEventListener('input', function () {
