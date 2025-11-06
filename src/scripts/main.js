@@ -56,18 +56,17 @@ form.addEventListener('submit', function (e) {
   });
 
   if (isValid) {
-    let data = [];
+    let data = {};
 
     inputs.forEach((input) => {
-      let inputData = {
-        [input.id]: input.value,
-      }
-      data.push(inputData);
+      data[input.id] = input.value;
       input.value = "";
     })
+
     toast.textContent = 'Thank you for contacting us!';
     toast.classList.add('active')
     toast.classList.remove('error')
+
     setTimeout(() => {
       toast.classList.remove('active');
     }, 3000);
@@ -76,9 +75,11 @@ form.addEventListener('submit', function (e) {
   } else {
     toast.textContent = 'Incorect form fields!'
     toast.classList.add('active', 'error')
+
     setTimeout(() => {
       toast.classList.remove('active', 'error');
     }, 3000);
+
     console.log('error')
   }
 })
